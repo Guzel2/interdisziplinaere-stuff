@@ -1,4 +1,4 @@
-[gd_scene load_steps=206 format=2]
+[gd_scene load_steps=207 format=2]
 
 [ext_resource path="res://scenes_and_scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/heads/Aang.png" type="Texture" id=2]
@@ -43,6 +43,7 @@
 [ext_resource path="res://sprites/paintings/Orangenkorb.png" type="Texture" id=41]
 [ext_resource path="res://sprites/paintings/Teller mit äpfeln.png" type="Texture" id=42]
 [ext_resource path="res://sprites/paintings/Venus Animation Spritesheet.png" type="Texture" id=43]
+[ext_resource path="res://scenes_and_scripts/main.gd" type="Script" id=44]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -244,6 +245,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 2224, 1668 )
+
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 28 )
@@ -314,23 +320,23 @@ flags = 4
 atlas = ExtResource( 28 )
 region = Rect2( 8896, 3336, 2224, 1668 )
 
-[sub_resource type="AtlasTexture" id=40]
-flags = 4
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 2224, 1668 )
-
 [sub_resource type="SpriteFrames" id=41]
 animations = [ {
-"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
-"loop": true,
-"name": "active",
-"speed": 7.0
-}, {
 "frames": [ SubResource( 40 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+"loop": true,
+"name": "active",
+"speed": 7.0
 } ]
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 30 )
+region = Rect2( 1866, 1854, 933, 927 )
 
 [sub_resource type="AtlasTexture" id=42]
 flags = 4
@@ -447,22 +453,17 @@ flags = 4
 atlas = ExtResource( 30 )
 region = Rect2( 933, 1854, 933, 927 )
 
-[sub_resource type="AtlasTexture" id=65]
-flags = 4
-atlas = ExtResource( 30 )
-region = Rect2( 1866, 1854, 933, 927 )
-
 [sub_resource type="SpriteFrames" id=66]
 animations = [ {
-"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
-"loop": true,
-"name": "active",
-"speed": 24.0
-}, {
 "frames": [ SubResource( 65 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
+"loop": true,
+"name": "active",
+"speed": 24.0
 } ]
 
 [sub_resource type="SpriteFrames" id=67]
@@ -541,6 +542,11 @@ animations = [ {
 "speed": 13.0
 } ]
 
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 34 )
+region = Rect2( 0, 0, 2224, 1668 )
+
 [sub_resource type="AtlasTexture" id=81]
 flags = 4
 atlas = ExtResource( 34 )
@@ -591,23 +597,23 @@ flags = 4
 atlas = ExtResource( 34 )
 region = Rect2( 8896, 0, 2224, 1668 )
 
-[sub_resource type="AtlasTexture" id=86]
-flags = 4
-atlas = ExtResource( 34 )
-region = Rect2( 0, 0, 2224, 1668 )
-
 [sub_resource type="SpriteFrames" id=87]
 animations = [ {
-"frames": [ SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 159 ), SubResource( 160 ), SubResource( 161 ), SubResource( 162 ), SubResource( 163 ) ],
-"loop": true,
-"name": "active",
-"speed": 8.0
-}, {
 "frames": [ SubResource( 86 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 159 ), SubResource( 160 ), SubResource( 161 ), SubResource( 162 ), SubResource( 163 ) ],
+"loop": true,
+"name": "active",
+"speed": 8.0
 } ]
+
+[sub_resource type="AtlasTexture" id=99]
+flags = 4
+atlas = ExtResource( 35 )
+region = Rect2( 0, 0, 2224, 1668 )
 
 [sub_resource type="AtlasTexture" id=88]
 flags = 4
@@ -664,23 +670,33 @@ flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 6672, 3336, 2224, 1668 )
 
-[sub_resource type="AtlasTexture" id=99]
-flags = 4
-atlas = ExtResource( 35 )
-region = Rect2( 0, 0, 2224, 1668 )
-
 [sub_resource type="SpriteFrames" id=100]
 animations = [ {
-"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
-"loop": true,
-"name": "active",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 99 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
+"loop": true,
+"name": "active",
+"speed": 5.0
 } ]
+
+[sub_resource type="AtlasTexture" id=101]
+flags = 4
+atlas = ExtResource( 32 )
+region = Rect2( 0, 0, 1112, 834 )
+
+[sub_resource type="AtlasTexture" id=102]
+flags = 4
+atlas = ExtResource( 32 )
+region = Rect2( 1112, 0, 1112, 834 )
+
+[sub_resource type="AtlasTexture" id=103]
+flags = 4
+atlas = ExtResource( 32 )
+region = Rect2( 2224, 0, 1112, 834 )
 
 [sub_resource type="AtlasTexture" id=105]
 flags = 4
@@ -712,33 +728,23 @@ flags = 4
 atlas = ExtResource( 32 )
 region = Rect2( 10008, 0, 1112, 834 )
 
-[sub_resource type="AtlasTexture" id=101]
-flags = 4
-atlas = ExtResource( 32 )
-region = Rect2( 0, 0, 1112, 834 )
-
-[sub_resource type="AtlasTexture" id=102]
-flags = 4
-atlas = ExtResource( 32 )
-region = Rect2( 1112, 0, 1112, 834 )
-
-[sub_resource type="AtlasTexture" id=103]
-flags = 4
-atlas = ExtResource( 32 )
-region = Rect2( 2224, 0, 1112, 834 )
-
 [sub_resource type="SpriteFrames" id=104]
 animations = [ {
-"frames": [ SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
-"loop": true,
-"name": "active",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 101 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
+"loop": true,
+"name": "active",
+"speed": 5.0
 } ]
+
+[sub_resource type="AtlasTexture" id=121]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 2224, 1668 )
 
 [sub_resource type="AtlasTexture" id=111]
 flags = 4
@@ -790,22 +796,17 @@ flags = 4
 atlas = ExtResource( 36 )
 region = Rect2( 8896, 1668, 2224, 1668 )
 
-[sub_resource type="AtlasTexture" id=121]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 0, 0, 2224, 1668 )
-
 [sub_resource type="SpriteFrames" id=122]
 animations = [ {
-"frames": [ SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ), SubResource( 120 ) ],
-"loop": true,
-"name": "active",
-"speed": 7.0
-}, {
 "frames": [ SubResource( 121 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ), SubResource( 120 ) ],
+"loop": true,
+"name": "active",
+"speed": 7.0
 } ]
 
 [sub_resource type="SpriteFrames" id=123]
@@ -890,6 +891,11 @@ animations = [ {
 "name": "default",
 "speed": 8.0
 } ]
+
+[sub_resource type="AtlasTexture" id=157]
+flags = 4
+atlas = ExtResource( 38 )
+region = Rect2( 0, 0, 586, 780 )
 
 [sub_resource type="AtlasTexture" id=137]
 flags = 4
@@ -991,25 +997,21 @@ flags = 4
 atlas = ExtResource( 38 )
 region = Rect2( 2344, 2340, 586, 780 )
 
-[sub_resource type="AtlasTexture" id=157]
-flags = 4
-atlas = ExtResource( 38 )
-region = Rect2( 0, 0, 586, 780 )
-
 [sub_resource type="SpriteFrames" id=158]
 animations = [ {
-"frames": [ SubResource( 137 ), SubResource( 138 ), SubResource( 139 ), SubResource( 140 ), SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ), SubResource( 145 ), SubResource( 146 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ), SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ) ],
-"loop": true,
-"name": "active",
-"speed": 20.0
-}, {
 "frames": [ SubResource( 157 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 137 ), SubResource( 138 ), SubResource( 139 ), SubResource( 140 ), SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ), SubResource( 145 ), SubResource( 146 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ), SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ) ],
+"loop": true,
+"name": "active",
+"speed": 20.0
 } ]
 
 [node name="main" type="Node2D"]
+script = ExtResource( 44 )
 
 [node name="player" type="Node2D" parent="."]
 script = ExtResource( 1 )
@@ -1020,158 +1022,137 @@ current = true
 [node name="heads" type="Node2D" parent="."]
 
 [node name="aang" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 757, -785 )
-rotation = -0.575959
 scale = Vector2( 0.485812, 0.485812 )
 frames = SubResource( 1 )
+place_randomly = true
 
 [node name="bee" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 318, -285 )
-rotation = -0.460767
 scale = Vector2( 0.607599, 0.607599 )
 frames = SubResource( 2 )
+place_randomly = true
 
 [node name="bender" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 2319, -1117 )
-rotation = 0.44855
 scale = Vector2( 0.354694, 0.354694 )
 frames = SubResource( 3 )
 area_size = 1.2
+place_randomly = true
 
 [node name="kirby" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 246, -679 )
-rotation = 0.181514
 scale = Vector2( 0.267, 0.265 )
 frames = SubResource( 4 )
+place_randomly = true
 
 [node name="daruma" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 673, -445 )
-rotation = -1.03673
 scale = Vector2( 0.229577, 0.229577 )
 frames = SubResource( 5 )
+place_randomly = true
 
 [node name="fischi" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 949, -189 )
-rotation = -0.115192
 scale = Vector2( 0.41, 0.41 )
 frames = SubResource( 6 )
+place_randomly = true
 
 [node name="idk_but_its_cute" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1390, -2.00005 )
-rotation = 0.230383
 scale = Vector2( 0.4565, 0.4565 )
 frames = SubResource( 7 )
+place_randomly = true
 
 [node name="kaonashi" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 13.0001, -1038 )
-rotation = 0.230383
 scale = Vector2( 0.348443, 0.348443 )
 frames = SubResource( 8 )
+place_randomly = true
 
 [node name="mario" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1434, -804 )
-rotation = -0.230383
 scale = Vector2( 0.543675, 0.543675 )
 frames = SubResource( 9 )
 area_size = 0.6
+place_randomly = true
 
 [node name="nerd" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 426, -1036 )
-rotation = 0.115192
 scale = Vector2( 0.218121, 0.218121 )
 frames = SubResource( 10 )
+place_randomly = true
 
 [node name="pinguwu" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1027, -1300 )
-rotation = -0.115192
 scale = Vector2( 0.592, 0.592 )
 frames = SubResource( 11 )
+place_randomly = true
 
 [node name="pirat" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1928, -355 )
-rotation = -0.115192
 scale = Vector2( 0.529, 0.529 )
 frames = SubResource( 12 )
+place_randomly = true
 
 [node name="poo" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1992, -795 )
-rotation = 0.230383
-scale = Vector2( 0.355919, 0.355919 )
+position = Vector2( 2636, -975 )
 frames = SubResource( 13 )
+place_randomly = true
 
 [node name="luffy" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1734, -1318 )
-scale = Vector2( 1.085, 1.085 )
+position = Vector2( 2629, -993 )
 frames = SubResource( 14 )
 area_size = 0.6
+place_randomly = true
 
 [node name="saturn" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 2559, -117 )
-rotation = 0.345575
+position = Vector2( 1212, -860 )
 frames = SubResource( 15 )
 area_size = 0.5
+place_randomly = true
 
 [node name="skull" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( -327, -632 )
-rotation = -0.115192
 scale = Vector2( 0.547, 0.547 )
 z_index = 1
 frames = SubResource( 16 )
+place_randomly = true
 
 [node name="spongebob" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 2593, -792 )
-rotation = -0.750492
 scale = Vector2( 0.34, 0.34 )
 frames = SubResource( 17 )
+place_randomly = true
 
 [node name="steve" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 3211, -506 )
-rotation = 0.115192
 scale = Vector2( 0.815, 0.815 )
 frames = SubResource( 18 )
+place_randomly = true
 
 [node name="stormtrooper" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 990, -1838 )
-rotation = 0.345575
 scale = Vector2( 0.475, 0.475 )
 frames = SubResource( 19 )
+place_randomly = true
 
 [node name="sus" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 2841, -1904 )
-rotation = -0.460767
-scale = Vector2( 0.91002, 0.91002 )
+position = Vector2( 1824.75, -64.2526 )
+scale = Vector2( 0.610505, 0.610505 )
 frames = SubResource( 20 )
+place_randomly = true
 
 [node name="tanuki" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 3381, -1151 )
-rotation = 0.345575
 scale = Vector2( 0.581, 0.581 )
 frames = SubResource( 21 )
+place_randomly = true
 
 [node name="teddy" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 2119, -1795 )
-rotation = -0.0628318
 scale = Vector2( 0.491, 0.491 )
 frames = SubResource( 22 )
+place_randomly = true
 
 [node name="totoro" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1600, -2181 )
-rotation = -0.230383
 scale = Vector2( 0.71, 0.71 )
 frames = SubResource( 23 )
+place_randomly = true
 
 [node name="turtel" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 508, -2156 )
-rotation = -0.69115
+position = Vector2( 377, 377 )
 scale = Vector2( 0.562, 0.562 )
 frames = SubResource( 24 )
+place_randomly = true
 
 [node name="ufo" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 3746, -773 )
-rotation = -0.808087
-scale = Vector2( 0.591, 0.591 )
+position = Vector2( 814, -94 )
 frames = SubResource( 25 )
 area_size = 0.9
+place_randomly = true
 
 [node name="paintings" type="Node2D" parent="."]
 
@@ -1187,18 +1168,20 @@ position = Vector2( -397, -1021 )
 scale = Vector2( 0.471683, 0.471683 )
 frames = SubResource( 66 )
 animation = "idle"
+place_randomly = true
 
 [node name="brot" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -930, 416 )
 scale = Vector2( 0.288069, 0.288069 )
 frames = SubResource( 67 )
 area_size = 0.8
+place_randomly = true
 
 [node name="dance_macabre" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -622, 250 )
+position = Vector2( -640, 196 )
 scale = Vector2( 0.405276, 0.405276 )
 frames = SubResource( 80 )
-frame = 3
+frame = 11
 
 [node name="engel" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1032, -857 )
@@ -1206,6 +1189,7 @@ scale = Vector2( 0.244979, 0.244979 )
 frames = SubResource( 87 )
 animation = "idle"
 area_size = 1.5
+place_randomly = true
 
 [node name="flirty_girl" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -890, -366 )
@@ -1213,14 +1197,16 @@ scale = Vector2( 0.343225, 0.343225 )
 frames = SubResource( 100 )
 animation = "idle"
 area_size = 1.2
+place_randomly = true
 
 [node name="medusa" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -360, -1733 )
 scale = Vector2( 0.655876, 0.655876 )
 frames = SubResource( 104 )
 animation = "idle"
-frame = 3
+frame = 1
 area_size = 0.25
+place_randomly = true
 
 [node name="hover_over" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1663.75, -1211.06 )
@@ -1228,39 +1214,46 @@ scale = Vector2( 0.420938, 0.420938 )
 frames = SubResource( 122 )
 animation = "idle"
 area_size = 1.2
+place_randomly = true
 
 [node name="orangenkorb" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -2204, -211 )
 scale = Vector2( 0.18825, 0.18825 )
 frames = SubResource( 123 )
 area_size = 1.2
+place_randomly = true
 
 [node name="zitronenteller" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -1053, -541 )
 scale = Vector2( 0.154227, 0.154227 )
 frames = SubResource( 124 )
+place_randomly = true
 
 [node name="apfelteller" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -195, -1648 )
 scale = Vector2( 0.288669, 0.288669 )
 frames = SubResource( 125 )
+place_randomly = true
 
 [node name="vase1" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -903, -1355 )
 scale = Vector2( 0.423261, 0.423261 )
 frames = SubResource( 126 )
+place_randomly = true
 
 [node name="vase2" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -224, 63 )
+position = Vector2( -238, 67 )
 scale = Vector2( 0.282374, 0.282374 )
 frames = SubResource( 127 )
+place_randomly = true
 
 [node name="venus" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -1697, -250 )
 scale = Vector2( 0.416667, 0.416667 )
 frames = SubResource( 136 )
-frame = 2
+frame = 5
 area_size = 1.5
+place_randomly = true
 
 [node name="hover_over2" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1319, 217 )
