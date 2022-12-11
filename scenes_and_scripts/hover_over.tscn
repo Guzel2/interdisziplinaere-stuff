@@ -16,3 +16,4 @@ shape = SubResource( 10 )
 
 [connection signal="animation_finished" from="." to="." method="_on_hover_over_animation_finished"]
 [connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]

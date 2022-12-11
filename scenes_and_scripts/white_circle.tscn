@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/drawing_ui/white_circle.png" type="Texture" id=1]
+
+[node name="white_circle" type="Sprite"]
+texture = ExtResource( 1 )
