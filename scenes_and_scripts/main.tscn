@@ -1,4 +1,4 @@
-[gd_scene load_steps=208 format=2]
+[gd_scene load_steps=267 format=2]
 
 [ext_resource path="res://scenes_and_scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/heads/Aang.png" type="Texture" id=2]
@@ -45,6 +45,32 @@
 [ext_resource path="res://sprites/paintings/Venus Animation Spritesheet.png" type="Texture" id=43]
 [ext_resource path="res://scenes_and_scripts/main.gd" type="Script" id=44]
 [ext_resource path="res://sprites/drawing_ui/white_square.png" type="Texture" id=45]
+[ext_resource path="res://sprites/heads/clock or dali.png" type="Texture" id=46]
+[ext_resource path="res://sprites/heads/bee fish.png" type="Texture" id=47]
+[ext_resource path="res://sprites/heads/it's me.png" type="Texture" id=48]
+[ext_resource path="res://sprites/heads/merkel.png" type="Texture" id=49]
+[ext_resource path="res://sprites/heads/elefant.png" type="Texture" id=50]
+[ext_resource path="res://sprites/heads/medusa.png" type="Texture" id=51]
+[ext_resource path="res://sprites/heads/einstein.png" type="Texture" id=52]
+[ext_resource path="res://sprites/heads/cube piggy.png" type="Texture" id=53]
+[ext_resource path="res://sprites/heads/Dali.png" type="Texture" id=54]
+[ext_resource path="res://sprites/heads/lion.png" type="Texture" id=55]
+[ext_resource path="res://sprites/heads/elvis.png" type="Texture" id=56]
+[ext_resource path="res://sprites/heads/ice cream dog.png" type="Texture" id=57]
+[ext_resource path="res://sprites/heads/Nusscnacker.png" type="Texture" id=58]
+[ext_resource path="res://sprites/heads/Monroe.png" type="Texture" id=59]
+[ext_resource path="res://sprites/heads/mr bean.png" type="Texture" id=60]
+[ext_resource path="res://sprites/heads/Morgan Free 2.png" type="Texture" id=61]
+[ext_resource path="res://sprites/heads/mona lisa.png" type="Texture" id=62]
+[ext_resource path="res://sprites/heads/princess lea.png" type="Texture" id=63]
+[ext_resource path="res://sprites/heads/The girl with the pearl earring.png" type="Texture" id=64]
+[ext_resource path="res://sprites/heads/statue.png" type="Texture" id=65]
+[ext_resource path="res://sprites/heads/Picasso.png" type="Texture" id=66]
+[ext_resource path="res://sprites/heads/snail.png" type="Texture" id=67]
+[ext_resource path="res://sprites/heads/octopus.png" type="Texture" id=68]
+[ext_resource path="res://sprites/heads/snow whie audrey.png" type="Texture" id=69]
+[ext_resource path="res://sprites/heads/The scream.png" type="Texture" id=70]
+[ext_resource path="res://sprites/paintings/4x2 9pic.sec Mord animation spritesheet.png" type="Texture" id=71]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -246,10 +272,205 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=40]
-flags = 4
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 2224, 1668 )
+[sub_resource type="SpriteFrames" id=164]
+animations = [ {
+"frames": [ ExtResource( 47 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=165]
+animations = [ {
+"frames": [ ExtResource( 46 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=166]
+animations = [ {
+"frames": [ ExtResource( 53 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=167]
+animations = [ {
+"frames": [ ExtResource( 54 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=168]
+animations = [ {
+"frames": [ ExtResource( 52 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=188]
+animations = [ {
+"frames": [ ExtResource( 70 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=181]
+animations = [ {
+"frames": [ ExtResource( 64 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=182]
+animations = [ {
+"frames": [ ExtResource( 65 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=183]
+animations = [ {
+"frames": [ ExtResource( 69 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=184]
+animations = [ {
+"frames": [ ExtResource( 67 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=185]
+animations = [ {
+"frames": [ ExtResource( 63 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=186]
+animations = [ {
+"frames": [ ExtResource( 66 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=187]
+animations = [ {
+"frames": [ ExtResource( 68 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=176]
+animations = [ {
+"frames": [ ExtResource( 58 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=177]
+animations = [ {
+"frames": [ ExtResource( 60 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=178]
+animations = [ {
+"frames": [ ExtResource( 61 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=179]
+animations = [ {
+"frames": [ ExtResource( 59 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=180]
+animations = [ {
+"frames": [ ExtResource( 62 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=169]
+animations = [ {
+"frames": [ ExtResource( 49 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=170]
+animations = [ {
+"frames": [ ExtResource( 51 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=171]
+animations = [ {
+"frames": [ ExtResource( 55 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=172]
+animations = [ {
+"frames": [ ExtResource( 48 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=173]
+animations = [ {
+"frames": [ ExtResource( 57 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=174]
+animations = [ {
+"frames": [ ExtResource( 56 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=175]
+animations = [ {
+"frames": [ ExtResource( 50 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
@@ -321,23 +542,23 @@ flags = 4
 atlas = ExtResource( 28 )
 region = Rect2( 8896, 3336, 2224, 1668 )
 
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 2224, 1668 )
+
 [sub_resource type="SpriteFrames" id=41]
 animations = [ {
-"frames": [ SubResource( 40 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
 "loop": true,
 "name": "active",
 "speed": 7.0
+}, {
+"frames": [ SubResource( 40 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=65]
-flags = 4
-atlas = ExtResource( 30 )
-region = Rect2( 1866, 1854, 933, 927 )
 
 [sub_resource type="AtlasTexture" id=42]
 flags = 4
@@ -454,17 +675,22 @@ flags = 4
 atlas = ExtResource( 30 )
 region = Rect2( 933, 1854, 933, 927 )
 
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 30 )
+region = Rect2( 1866, 1854, 933, 927 )
+
 [sub_resource type="SpriteFrames" id=66]
 animations = [ {
-"frames": [ SubResource( 65 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
 "loop": true,
 "name": "active",
 "speed": 24.0
+}, {
+"frames": [ SubResource( 65 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=67]
@@ -543,11 +769,6 @@ animations = [ {
 "speed": 13.0
 } ]
 
-[sub_resource type="AtlasTexture" id=86]
-flags = 4
-atlas = ExtResource( 34 )
-region = Rect2( 0, 0, 2224, 1668 )
-
 [sub_resource type="AtlasTexture" id=81]
 flags = 4
 atlas = ExtResource( 34 )
@@ -598,23 +819,23 @@ flags = 4
 atlas = ExtResource( 34 )
 region = Rect2( 8896, 0, 2224, 1668 )
 
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 34 )
+region = Rect2( 0, 0, 2224, 1668 )
+
 [sub_resource type="SpriteFrames" id=87]
 animations = [ {
-"frames": [ SubResource( 86 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 159 ), SubResource( 160 ), SubResource( 161 ), SubResource( 162 ), SubResource( 163 ) ],
 "loop": true,
 "name": "active",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 86 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=99]
-flags = 4
-atlas = ExtResource( 35 )
-region = Rect2( 0, 0, 2224, 1668 )
 
 [sub_resource type="AtlasTexture" id=88]
 flags = 4
@@ -671,33 +892,23 @@ flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 6672, 3336, 2224, 1668 )
 
+[sub_resource type="AtlasTexture" id=99]
+flags = 4
+atlas = ExtResource( 35 )
+region = Rect2( 0, 0, 2224, 1668 )
+
 [sub_resource type="SpriteFrames" id=100]
 animations = [ {
-"frames": [ SubResource( 99 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
 "loop": true,
 "name": "active",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 99 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=101]
-flags = 4
-atlas = ExtResource( 32 )
-region = Rect2( 0, 0, 1112, 834 )
-
-[sub_resource type="AtlasTexture" id=102]
-flags = 4
-atlas = ExtResource( 32 )
-region = Rect2( 1112, 0, 1112, 834 )
-
-[sub_resource type="AtlasTexture" id=103]
-flags = 4
-atlas = ExtResource( 32 )
-region = Rect2( 2224, 0, 1112, 834 )
 
 [sub_resource type="AtlasTexture" id=105]
 flags = 4
@@ -729,23 +940,33 @@ flags = 4
 atlas = ExtResource( 32 )
 region = Rect2( 10008, 0, 1112, 834 )
 
+[sub_resource type="AtlasTexture" id=101]
+flags = 4
+atlas = ExtResource( 32 )
+region = Rect2( 0, 0, 1112, 834 )
+
+[sub_resource type="AtlasTexture" id=102]
+flags = 4
+atlas = ExtResource( 32 )
+region = Rect2( 1112, 0, 1112, 834 )
+
+[sub_resource type="AtlasTexture" id=103]
+flags = 4
+atlas = ExtResource( 32 )
+region = Rect2( 2224, 0, 1112, 834 )
+
 [sub_resource type="SpriteFrames" id=104]
 animations = [ {
-"frames": [ SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 101 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
 "loop": true,
 "name": "active",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 101 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=121]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 0, 0, 2224, 1668 )
 
 [sub_resource type="AtlasTexture" id=111]
 flags = 4
@@ -797,17 +1018,22 @@ flags = 4
 atlas = ExtResource( 36 )
 region = Rect2( 8896, 1668, 2224, 1668 )
 
+[sub_resource type="AtlasTexture" id=121]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 2224, 1668 )
+
 [sub_resource type="SpriteFrames" id=122]
 animations = [ {
-"frames": [ SubResource( 121 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ), SubResource( 120 ) ],
 "loop": true,
 "name": "active",
 "speed": 7.0
+}, {
+"frames": [ SubResource( 121 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=123]
@@ -892,11 +1118,6 @@ animations = [ {
 "name": "default",
 "speed": 8.0
 } ]
-
-[sub_resource type="AtlasTexture" id=157]
-flags = 4
-atlas = ExtResource( 38 )
-region = Rect2( 0, 0, 586, 780 )
 
 [sub_resource type="AtlasTexture" id=137]
 flags = 4
@@ -998,17 +1219,70 @@ flags = 4
 atlas = ExtResource( 38 )
 region = Rect2( 2344, 2340, 586, 780 )
 
+[sub_resource type="AtlasTexture" id=157]
+flags = 4
+atlas = ExtResource( 38 )
+region = Rect2( 0, 0, 586, 780 )
+
 [sub_resource type="SpriteFrames" id=158]
 animations = [ {
-"frames": [ SubResource( 157 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 137 ), SubResource( 138 ), SubResource( 139 ), SubResource( 140 ), SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ), SubResource( 145 ), SubResource( 146 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ), SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ) ],
 "loop": true,
 "name": "active",
 "speed": 20.0
+}, {
+"frames": [ SubResource( 157 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=189]
+flags = 4
+atlas = ExtResource( 71 )
+region = Rect2( 0, 0, 2224, 1668 )
+
+[sub_resource type="AtlasTexture" id=190]
+flags = 4
+atlas = ExtResource( 71 )
+region = Rect2( 2224, 0, 2224, 1668 )
+
+[sub_resource type="AtlasTexture" id=191]
+flags = 4
+atlas = ExtResource( 71 )
+region = Rect2( 4448, 0, 2224, 1668 )
+
+[sub_resource type="AtlasTexture" id=192]
+flags = 4
+atlas = ExtResource( 71 )
+region = Rect2( 6672, 0, 2224, 1668 )
+
+[sub_resource type="AtlasTexture" id=193]
+flags = 4
+atlas = ExtResource( 71 )
+region = Rect2( 0, 1668, 2224, 1668 )
+
+[sub_resource type="AtlasTexture" id=194]
+flags = 4
+atlas = ExtResource( 71 )
+region = Rect2( 2224, 1668, 2224, 1668 )
+
+[sub_resource type="AtlasTexture" id=197]
+flags = 4
+atlas = ExtResource( 71 )
+region = Rect2( 0, 0, 2224, 1668 )
+
+[sub_resource type="SpriteFrames" id=198]
+animations = [ {
+"frames": [ SubResource( 189 ), SubResource( 190 ), SubResource( 191 ), SubResource( 192 ), SubResource( 193 ), SubResource( 194 ) ],
+"loop": true,
+"name": "active",
+"speed": 9.0
+}, {
+"frames": [ SubResource( 197 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
 
 [node name="main" type="Node2D"]
@@ -1063,140 +1337,254 @@ __meta__ = {
 }
 
 [node name="aang" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 2997, 3574 )
 scale = Vector2( 0.485812, 0.485812 )
 frames = SubResource( 1 )
-place_randomly = true
 
 [node name="bee" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 2204, 3657 )
 scale = Vector2( 0.607599, 0.607599 )
 frames = SubResource( 2 )
-place_randomly = true
 
 [node name="bender" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 1101, 3454 )
 scale = Vector2( 0.354694, 0.354694 )
 frames = SubResource( 3 )
 area_size = 1.2
-place_randomly = true
 
 [node name="kirby" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 595, 3061 )
 scale = Vector2( 0.267, 0.265 )
 frames = SubResource( 4 )
-place_randomly = true
 
 [node name="daruma" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( -711, 2578 )
 scale = Vector2( 0.229577, 0.229577 )
 frames = SubResource( 5 )
-place_randomly = true
 
 [node name="fischi" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( -160, 2948 )
 scale = Vector2( 0.41, 0.41 )
 frames = SubResource( 6 )
-place_randomly = true
 
 [node name="idk_but_its_cute" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( -122, 2208 )
 scale = Vector2( 0.4565, 0.4565 )
 frames = SubResource( 7 )
-place_randomly = true
 
 [node name="kaonashi" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 694, 1709 )
 scale = Vector2( 0.348443, 0.348443 )
 frames = SubResource( 8 )
-place_randomly = true
 
 [node name="mario" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 1245, 1075 )
 scale = Vector2( 0.543675, 0.543675 )
 frames = SubResource( 9 )
 area_size = 0.6
-place_randomly = true
 
 [node name="nerd" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 1698, 1264 )
 scale = Vector2( 0.218121, 0.218121 )
 frames = SubResource( 10 )
-place_randomly = true
 
 [node name="pinguwu" parent="heads" instance=ExtResource( 3 )]
-scale = Vector2( 0.592, 0.592 )
+position = Vector2( 588, 2396 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 11 )
-place_randomly = true
 
 [node name="pirat" parent="heads" instance=ExtResource( 3 )]
-scale = Vector2( 0.529, 0.529 )
+position = Vector2( 1766, 645 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 12 )
-place_randomly = true
 
 [node name="poo" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 2636, -975 )
+position = Vector2( 7739, -696 )
 frames = SubResource( 13 )
-place_randomly = true
 
 [node name="luffy" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 2629, -993 )
+position = Vector2( 6501, -570 )
 frames = SubResource( 14 )
 area_size = 0.6
-place_randomly = true
 
 [node name="saturn" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1212, -860 )
+position = Vector2( 2910, -566 )
 frames = SubResource( 15 )
 area_size = 0.5
-place_randomly = true
 
 [node name="skull" parent="heads" instance=ExtResource( 3 )]
-scale = Vector2( 0.547, 0.547 )
+position = Vector2( 1418, 1943 )
+scale = Vector2( 0.7, 0.7 )
 z_index = 1
 frames = SubResource( 16 )
-place_randomly = true
 
 [node name="spongebob" parent="heads" instance=ExtResource( 3 )]
-scale = Vector2( 0.34, 0.34 )
+position = Vector2( 1501, 2819 )
+scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 17 )
-place_randomly = true
 
 [node name="steve" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 2309, 1679 )
 scale = Vector2( 0.815, 0.815 )
 frames = SubResource( 18 )
-place_randomly = true
 
 [node name="stormtrooper" parent="heads" instance=ExtResource( 3 )]
-scale = Vector2( 0.475, 0.475 )
+position = Vector2( 2445, 2714 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 19 )
-place_randomly = true
 
 [node name="sus" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1824.75, -64.2526 )
+position = Vector2( 6992, 1157 )
 scale = Vector2( 0.610505, 0.610505 )
 frames = SubResource( 20 )
-place_randomly = true
 
 [node name="tanuki" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1452, 649 )
+position = Vector2( 7929, 1215 )
 scale = Vector2( 0.581, 0.581 )
 frames = SubResource( 21 )
-place_randomly = true
 
 [node name="teddy" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1084, -305 )
-scale = Vector2( 0.491, 0.491 )
+position = Vector2( 3552, 578 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 22 )
-place_randomly = true
 
 [node name="totoro" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 638, -635 )
+position = Vector2( 2736, 519.5 )
 scale = Vector2( 0.71, 0.71 )
 frames = SubResource( 23 )
-place_randomly = true
 
 [node name="turtel" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 377, 377 )
-scale = Vector2( 0.562, 0.562 )
+position = Vector2( 5594, 2484 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 24 )
-place_randomly = true
 
 [node name="ufo" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 847, 25 )
+position = Vector2( 8661, 1799 )
 frames = SubResource( 25 )
 area_size = 0.9
-place_randomly = true
+
+[node name="beefish" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( -898, 1414 )
+frames = SubResource( 164 )
+
+[node name="clock" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 3374, 2751 )
+frames = SubResource( 165 )
+
+[node name="cube_piggy" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 1528, 4240 )
+frames = SubResource( 166 )
+area_size = 0.6
+
+[node name="dali" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 405, 3829 )
+frames = SubResource( 167 )
+area_size = 0.6
+
+[node name="einstein" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 472, 756 )
+frames = SubResource( 168 )
+area_size = 0.6
+
+[node name="scream" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 9102, -15 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 188 )
+area_size = 1.2
+
+[node name="the_girl_with_the_pearl_earring" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 7634, 350 )
+frames = SubResource( 181 )
+
+[node name="statue" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 8704, 755 )
+frames = SubResource( 182 )
+area_size = 0.6
+
+[node name="audrey" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 6343, 465 )
+frames = SubResource( 183 )
+area_size = 0.9
+
+[node name="snail" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 4070, -500 )
+frames = SubResource( 184 )
+area_size = 0.7
+
+[node name="princess_lea" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 4491, 438 )
+frames = SubResource( 185 )
+area_size = 0.7
+
+[node name="picasso" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 4512, 1597 )
+frames = SubResource( 186 )
+area_size = 0.6
+
+[node name="octopus" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 7456, 1948 )
+frames = SubResource( 187 )
+area_size = 0.7
+
+[node name="nutcracker" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 8804, -855 )
+frames = SubResource( 176 )
+area_size = 0.6
+
+[node name="mr_bean" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 5354, -154 )
+frames = SubResource( 177 )
+
+[node name="morgan_free" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 3879, -1550 )
+frames = SubResource( 178 )
+area_size = 0.4
+
+[node name="monroe" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 7015, 2964 )
+frames = SubResource( 179 )
+area_size = 0.6
+
+[node name="mona_lisa" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 1787, -1126 )
+frames = SubResource( 180 )
+area_size = 0.8
+
+[node name="merkel" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 5032, -1242 )
+frames = SubResource( 169 )
+area_size = 0.9
+
+[node name="medusa" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 4529, 2838 )
+frames = SubResource( 170 )
+area_size = 0.7
+
+[node name="lion" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 2806, -1680 )
+frames = SubResource( 171 )
+area_size = 0.4
+
+[node name="its_me" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 5459, 1696 )
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 172 )
+area_size = 1.2
+
+[node name="ice_cream_dog" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 6399, 2014 )
+frames = SubResource( 173 )
+area_size = 0.6
+
+[node name="elvis" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 7041, -1644 )
+frames = SubResource( 174 )
+area_size = 0.6
+
+[node name="elefant" parent="heads" instance=ExtResource( 3 )]
+position = Vector2( 3352, 1565 )
+frames = SubResource( 175 )
+area_size = 0.6
 
 [node name="paintings" type="Node2D" parent="."]
 __meta__ = {
@@ -1204,99 +1592,95 @@ __meta__ = {
 }
 
 [node name="apfeltyp" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -2502, -523 )
+position = Vector2( -1701, -510 )
 scale = Vector2( 0.473022, 0.473022 )
 frames = SubResource( 41 )
-area_size = 1.1
+area_size = 1.5
+place_randomly = false
 
 [node name="bishop" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -397, -1021 )
 scale = Vector2( 0.471683, 0.471683 )
 frames = SubResource( 66 )
-place_randomly = true
 
 [node name="brot" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -930, 416 )
+position = Vector2( -3766, 477 )
 scale = Vector2( 0.288069, 0.288069 )
 frames = SubResource( 67 )
 area_size = 0.8
-place_randomly = true
 
 [node name="dance_macabre" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -640, 196 )
+position = Vector2( -888, 342 )
 scale = Vector2( 0.405276, 0.405276 )
 frames = SubResource( 80 )
-frame = 1
+area_size = 1.2
+place_randomly = false
 
 [node name="engel" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -1032, -857 )
+position = Vector2( -1478, -1929 )
 scale = Vector2( 0.244979, 0.244979 )
 frames = SubResource( 87 )
 area_size = 1.5
-place_randomly = true
 
 [node name="flirty_girl" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -890, -366 )
+position = Vector2( -3877, -475 )
 scale = Vector2( 0.343225, 0.343225 )
 frames = SubResource( 100 )
 area_size = 1.2
-place_randomly = true
 
 [node name="medusa" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -360, -1733 )
+position = Vector2( -760, -2080 )
 scale = Vector2( 0.655876, 0.655876 )
 frames = SubResource( 104 )
-area_size = 0.25
-place_randomly = true
+frame = 2
+area_size = 0.5
 
-[node name="hover_over" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -1663.75, -1211.06 )
+[node name="girl_kissing" parent="paintings" instance=ExtResource( 29 )]
+position = Vector2( -2313, -1800 )
 scale = Vector2( 0.420938, 0.420938 )
 frames = SubResource( 122 )
-area_size = 1.2
-place_randomly = true
+area_size = 2.0
 
 [node name="orangenkorb" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -2204, -211 )
+position = Vector2( -2453, -828 )
 scale = Vector2( 0.18825, 0.18825 )
 frames = SubResource( 123 )
 area_size = 1.2
-place_randomly = true
 
 [node name="zitronenteller" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -1053, -541 )
 scale = Vector2( 0.154227, 0.154227 )
 frames = SubResource( 124 )
-place_randomly = true
 
 [node name="apfelteller" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -195, -1648 )
 scale = Vector2( 0.288669, 0.288669 )
 frames = SubResource( 125 )
-place_randomly = true
 
 [node name="vase1" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -903, -1355 )
 scale = Vector2( 0.423261, 0.423261 )
 frames = SubResource( 126 )
-place_randomly = true
 
 [node name="vase2" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -289, -688 )
+position = Vector2( -1863, -1124 )
 scale = Vector2( 0.282374, 0.282374 )
 frames = SubResource( 127 )
-place_randomly = true
 
 [node name="venus" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -525, 899 )
+position = Vector2( -2693, 2998 )
 scale = Vector2( 0.416667, 0.416667 )
 frames = SubResource( 136 )
-frame = 1
+frame = 2
 area_size = 1.5
-place_randomly = true
 
-[node name="hover_over2" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -1319, 217 )
-scale = Vector2( 0.750853, 0.750853 )
+[node name="violent_violin" parent="paintings" instance=ExtResource( 29 )]
+position = Vector2( -1690, 345 )
 frames = SubResource( 158 )
-area_size = 0.8
+place_randomly = false
+
+[node name="mord" parent="paintings" instance=ExtResource( 29 )]
+position = Vector2( -2642, 1835 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 198 )
+area_size = 2.0

@@ -23,12 +23,16 @@ func set_up():
 			objects_to_place.append(child)
 		if child.can_be_found == true:
 			objects_to_find.append(child)
+			
+		child.change_radius()
 	
 	for child in paintings.get_children():
 		if child.place_randomly == true:
 			objects_to_place.append(child)
 		if child.can_be_found == true:
 			objects_to_find.append(child)
+		
+		child.change_radius()
 
 func place_objects():
 	var step_size = 360.0 / objects_to_place.size()
@@ -38,30 +42,30 @@ func place_objects():
 	var x = 0.0
 	
 	for object in objects_to_place:
-		object.position.x = cos((x / 90) * PI/2) * 2500
-		object.position.y = sin((x / 90) * PI/2) * 2500
+		object.position.x = cos((x / 90) * PI/2) * 4000
+		object.position.y = sin((x / 90) * PI/2) * 4000
 		
 		var size = object.frames.get_frame(object.animation, object.frame).get_size()
 		var new_scale
 		
 		if size.x > size.y:
-			new_scale = 500/size.x
+			new_scale = 500.0/size.x
 		else:
-			new_scale = 500/size.y
+			new_scale = 500.0/size.y
 		
 		new_scale *= .6 + float(randi() % 81)/100
 		object.scale = Vector2(new_scale, new_scale)
 		
 		object.rotation_degrees = -20 + randi() % 41
 		
-		object.position += Vector2(-250 + randi() % 501, -250 + randi() % 501)
+		#object.position += Vector2(-500 + randi() % 1001, -500 + randi() % 1001)
 		
 		x += step_size
 
 func choose_objects_to_search():
 	objects_to_find.shuffle()
 	
-	for x in range(num_of_objects_to_search):
+	for _x in range(num_of_objects_to_search):
 		var object = objects_to_find.pop_front()
 		current_searched_objects.append(object)
 		objects_to_find.append(object)
