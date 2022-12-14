@@ -47,8 +47,9 @@ func _process(delta):
 		if Input.is_action_just_pressed("left_click"):
 			parent.check_if_player_found_object()
 		
-	else:
+		check_distances()
 		
+	else:
 		#pen
 		if Input.is_action_just_pressed("left_click"):
 			pen_down = true
@@ -120,7 +121,22 @@ func _process(delta):
 			else:
 				cooldown -= delta
 	
-	
 func set_drawing_mode():
 	drawing_mode = true
 	canvas.visible = true
+
+func check_distances():
+	for object in parent.objects:
+		if object.active:
+			if (position - object.position).length() < object.radius * object.scale.x:
+				if !object.mouse_in_this:
+					object.mouse_entered()
+			
+			elif object.mouse_in_this:
+				object.mouse_exited()
+
+func _on_area_area_entered(area):
+	area.get_parent().active = true
+
+func _on_area_area_exited(area):
+	area.get_parent().active = false

@@ -3,7 +3,6 @@ extends AnimatedSprite
 onready var area = $area
 onready var col = $area/CollisionShape2D
 
-export var area_size = 1.0
 export var can_be_found = true
 export var place_randomly = true
 
@@ -12,15 +11,26 @@ var mouse_in_this = false
 
 var repositioned = false
 
-func change_radius():
-	col.shape.set_radius(area_size * 500.0)
+var active = false
 
-func _on_area_mouse_entered():
-	mouse_in_this = true
+var radius
+var width
+var height
+
+func _ready():
+	width = get_sprite_frames().get_frame('default', 0).get_width()
+	height = get_sprite_frames().get_frame('default', 0).get_height()
 	
-	print(name, ' has a radius of ', col.shape.radius, ' and should have a radius of ', area_size * 500.0)
+	if width > height:
+		radius = get_sprite_frames().get_frame('default', 0).get_width() / 2
+	else:
+		radius = get_sprite_frames().get_frame('default', 0).get_height() / 2
+		
 
-func _on_area_mouse_exited():
+func mouse_entered():
+	mouse_in_this = true
+
+func mouse_exited():
 	mouse_in_this = false
 
 func _on_area_area_entered(area):

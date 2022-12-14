@@ -1,4 +1,4 @@
-[gd_scene load_steps=267 format=2]
+[gd_scene load_steps=268 format=2]
 
 [ext_resource path="res://scenes_and_scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/heads/Aang.png" type="Texture" id=2]
@@ -71,6 +71,9 @@
 [ext_resource path="res://sprites/heads/snow whie audrey.png" type="Texture" id=69]
 [ext_resource path="res://sprites/heads/The scream.png" type="Texture" id=70]
 [ext_resource path="res://sprites/paintings/4x2 9pic.sec Mord animation spritesheet.png" type="Texture" id=71]
+
+[sub_resource type="RectangleShape2D" id=199]
+extents = Vector2( 960, 540 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -1291,6 +1294,11 @@ script = ExtResource( 44 )
 [node name="player" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
+[node name="area" type="Area2D" parent="player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/area"]
+shape = SubResource( 199 )
+
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
 
@@ -1338,64 +1346,50 @@ __meta__ = {
 
 [node name="aang" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 2997, 3574 )
-scale = Vector2( 0.485812, 0.485812 )
 frames = SubResource( 1 )
 
 [node name="bee" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 2204, 3657 )
-scale = Vector2( 0.607599, 0.607599 )
 frames = SubResource( 2 )
 
 [node name="bender" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 1101, 3454 )
-scale = Vector2( 0.354694, 0.354694 )
 frames = SubResource( 3 )
-area_size = 1.2
 
 [node name="kirby" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 595, 3061 )
-scale = Vector2( 0.267, 0.265 )
 frames = SubResource( 4 )
 
 [node name="daruma" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( -711, 2578 )
-scale = Vector2( 0.229577, 0.229577 )
 frames = SubResource( 5 )
 
 [node name="fischi" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( -160, 2948 )
-scale = Vector2( 0.41, 0.41 )
 frames = SubResource( 6 )
 
 [node name="idk_but_its_cute" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( -122, 2208 )
-scale = Vector2( 0.4565, 0.4565 )
 frames = SubResource( 7 )
 
 [node name="kaonashi" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 694, 1709 )
-scale = Vector2( 0.348443, 0.348443 )
+position = Vector2( -4307, 3067 )
 frames = SubResource( 8 )
 
 [node name="mario" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 1245, 1075 )
-scale = Vector2( 0.543675, 0.543675 )
+position = Vector2( 2342, 928 )
 frames = SubResource( 9 )
-area_size = 0.6
 
 [node name="nerd" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 1698, 1264 )
-scale = Vector2( 0.218121, 0.218121 )
 frames = SubResource( 10 )
 
 [node name="pinguwu" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 588, 2396 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( -532, 2962 )
 frames = SubResource( 11 )
 
 [node name="pirat" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 1766, 645 )
-scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 12 )
 
 [node name="poo" parent="heads" instance=ExtResource( 3 )]
@@ -1405,66 +1399,54 @@ frames = SubResource( 13 )
 [node name="luffy" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 6501, -570 )
 frames = SubResource( 14 )
-area_size = 0.6
 
 [node name="saturn" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 2910, -566 )
 frames = SubResource( 15 )
-area_size = 0.5
 
 [node name="skull" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 1418, 1943 )
-scale = Vector2( 0.7, 0.7 )
 z_index = 1
 frames = SubResource( 16 )
 
 [node name="spongebob" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 1501, 2819 )
-scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 17 )
 
 [node name="steve" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 2309, 1679 )
-scale = Vector2( 0.815, 0.815 )
+position = Vector2( 5805, 3446 )
 frames = SubResource( 18 )
 
 [node name="stormtrooper" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 2445, 2714 )
-scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 19 )
 
 [node name="sus" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 6992, 1157 )
-scale = Vector2( 0.610505, 0.610505 )
 frames = SubResource( 20 )
 
 [node name="tanuki" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 7929, 1215 )
-scale = Vector2( 0.581, 0.581 )
 frames = SubResource( 21 )
 
 [node name="teddy" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 3552, 578 )
-scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 22 )
 
 [node name="totoro" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 2736, 519.5 )
-scale = Vector2( 0.71, 0.71 )
 frames = SubResource( 23 )
 
 [node name="turtel" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 5594, 2484 )
-scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 24 )
 
 [node name="ufo" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 8661, 1799 )
 frames = SubResource( 25 )
-area_size = 0.9
 
 [node name="beefish" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( -898, 1414 )
+position = Vector2( -1102, 1888 )
 frames = SubResource( 164 )
 
 [node name="clock" parent="heads" instance=ExtResource( 3 )]
@@ -1474,23 +1456,18 @@ frames = SubResource( 165 )
 [node name="cube_piggy" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 1528, 4240 )
 frames = SubResource( 166 )
-area_size = 0.6
 
 [node name="dali" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 405, 3829 )
 frames = SubResource( 167 )
-area_size = 0.6
 
 [node name="einstein" parent="heads" instance=ExtResource( 3 )]
-position = Vector2( 472, 756 )
+position = Vector2( -2809, 2023 )
 frames = SubResource( 168 )
-area_size = 0.6
 
 [node name="scream" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 9102, -15 )
-scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 188 )
-area_size = 1.2
 
 [node name="the_girl_with_the_pearl_earring" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 7634, 350 )
@@ -1499,37 +1476,30 @@ frames = SubResource( 181 )
 [node name="statue" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 8704, 755 )
 frames = SubResource( 182 )
-area_size = 0.6
 
 [node name="audrey" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 6343, 465 )
 frames = SubResource( 183 )
-area_size = 0.9
 
 [node name="snail" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 4070, -500 )
 frames = SubResource( 184 )
-area_size = 0.7
 
 [node name="princess_lea" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 4491, 438 )
 frames = SubResource( 185 )
-area_size = 0.7
 
 [node name="picasso" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 4512, 1597 )
 frames = SubResource( 186 )
-area_size = 0.6
 
 [node name="octopus" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 7456, 1948 )
 frames = SubResource( 187 )
-area_size = 0.7
 
 [node name="nutcracker" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 8804, -855 )
 frames = SubResource( 176 )
-area_size = 0.6
 
 [node name="mr_bean" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 5354, -154 )
@@ -1538,53 +1508,42 @@ frames = SubResource( 177 )
 [node name="morgan_free" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 3879, -1550 )
 frames = SubResource( 178 )
-area_size = 0.4
 
 [node name="monroe" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 7015, 2964 )
 frames = SubResource( 179 )
-area_size = 0.6
 
 [node name="mona_lisa" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 1787, -1126 )
 frames = SubResource( 180 )
-area_size = 0.8
 
 [node name="merkel" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 5032, -1242 )
 frames = SubResource( 169 )
-area_size = 0.9
 
 [node name="medusa" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 4529, 2838 )
 frames = SubResource( 170 )
-area_size = 0.7
 
 [node name="lion" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 2806, -1680 )
 frames = SubResource( 171 )
-area_size = 0.4
 
 [node name="its_me" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 5459, 1696 )
-scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 172 )
-area_size = 1.2
 
 [node name="ice_cream_dog" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 6399, 2014 )
 frames = SubResource( 173 )
-area_size = 0.6
 
 [node name="elvis" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 7041, -1644 )
 frames = SubResource( 174 )
-area_size = 0.6
 
 [node name="elefant" parent="heads" instance=ExtResource( 3 )]
 position = Vector2( 3352, 1565 )
 frames = SubResource( 175 )
-area_size = 0.6
 
 [node name="paintings" type="Node2D" parent="."]
 __meta__ = {
@@ -1593,87 +1552,62 @@ __meta__ = {
 
 [node name="apfeltyp" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1701, -510 )
-scale = Vector2( 0.473022, 0.473022 )
 frames = SubResource( 41 )
-area_size = 1.5
 place_randomly = false
 
 [node name="bishop" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -397, -1021 )
-scale = Vector2( 0.471683, 0.471683 )
 frames = SubResource( 66 )
 
 [node name="brot" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -3766, 477 )
-scale = Vector2( 0.288069, 0.288069 )
 frames = SubResource( 67 )
-area_size = 0.8
 
 [node name="dance_macabre" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -888, 342 )
-scale = Vector2( 0.405276, 0.405276 )
+position = Vector2( 596, -81 )
 frames = SubResource( 80 )
-frame = 8
-area_size = 1.2
 place_randomly = false
 
 [node name="engel" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -1478, -1929 )
-scale = Vector2( 0.244979, 0.244979 )
+position = Vector2( -1781, -2584 )
 frames = SubResource( 87 )
-area_size = 1.5
 
 [node name="flirty_girl" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -3877, -475 )
-scale = Vector2( 0.343225, 0.343225 )
+position = Vector2( -4380, -661 )
 frames = SubResource( 100 )
-area_size = 1.2
 
 [node name="medusa" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -760, -2080 )
-scale = Vector2( 0.655876, 0.655876 )
+position = Vector2( -571, -2896 )
 frames = SubResource( 104 )
-frame = 2
-area_size = 0.5
 
 [node name="girl_kissing" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -2313, -1800 )
-scale = Vector2( 0.420938, 0.420938 )
+position = Vector2( -3404, -2417 )
 frames = SubResource( 122 )
-area_size = 2.0
 
 [node name="orangenkorb" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -2453, -828 )
-scale = Vector2( 0.18825, 0.18825 )
+position = Vector2( -2652, -909 )
 frames = SubResource( 123 )
-area_size = 1.2
 
 [node name="zitronenteller" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -1053, -541 )
-scale = Vector2( 0.154227, 0.154227 )
 frames = SubResource( 124 )
 
 [node name="apfelteller" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -195, -1648 )
-scale = Vector2( 0.288669, 0.288669 )
 frames = SubResource( 125 )
 
 [node name="vase1" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -903, -1355 )
-scale = Vector2( 0.423261, 0.423261 )
+position = Vector2( -2993, -3685 )
 frames = SubResource( 126 )
 
 [node name="vase2" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -1863, -1124 )
-scale = Vector2( 0.282374, 0.282374 )
+position = Vector2( -118, -3683 )
 frames = SubResource( 127 )
 
 [node name="venus" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -2693, 2998 )
-scale = Vector2( 0.416667, 0.416667 )
 frames = SubResource( 136 )
-frame = 1
-area_size = 1.5
+frame = 2
 
 [node name="violent_violin" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1690, 345 )
@@ -1681,7 +1615,8 @@ frames = SubResource( 158 )
 place_randomly = false
 
 [node name="mord" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -2642, 1835 )
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( -4854, 1943 )
 frames = SubResource( 198 )
-area_size = 2.0
+
+[connection signal="area_entered" from="player/area" to="player" method="_on_area_area_entered"]
+[connection signal="area_exited" from="player/area" to="player" method="_on_area_area_exited"]

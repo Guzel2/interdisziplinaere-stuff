@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes_and_scripts/hover_over.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 500.0
+radius = 750.0
 
 [node name="hover_over" type="AnimatedSprite"]
 playing = true
@@ -15,6 +15,3 @@ script = ExtResource( 1 )
 shape = SubResource( 10 )
 
 [connection signal="animation_finished" from="." to="." method="_on_hover_over_animation_finished"]
-[connection signal="area_entered" from="area" to="." method="_on_area_area_entered"]
-[connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]

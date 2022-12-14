@@ -4,6 +4,7 @@ onready var player = $player
 onready var heads = $heads
 onready var paintings = $paintings
 
+var objects = []
 var objects_to_place = []
 var objects_to_find = []
 var current_searched_objects = []
@@ -19,20 +20,20 @@ func _ready():
 
 func set_up():
 	for child in heads.get_children():
+		objects.append(child)
+		
 		if child.place_randomly == true:
 			objects_to_place.append(child)
 		if child.can_be_found == true:
 			objects_to_find.append(child)
-			
-		child.change_radius()
 	
 	for child in paintings.get_children():
+		objects.append(child)
+		
 		if child.place_randomly == true:
 			objects_to_place.append(child)
 		if child.can_be_found == true:
 			objects_to_find.append(child)
-		
-		child.change_radius()
 
 func place_objects():
 	var step_size = 360.0 / objects_to_place.size()
