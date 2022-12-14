@@ -31,7 +31,6 @@ func _on_hover_over_animation_finished():
 	if animation == "active":
 		animation = "default"
 
-
 func _on_area_area_entered(area):
 	var area_parent = area.get_parent()
 	

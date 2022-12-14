@@ -1613,6 +1613,7 @@ area_size = 0.8
 position = Vector2( -888, 342 )
 scale = Vector2( 0.405276, 0.405276 )
 frames = SubResource( 80 )
+frame = 8
 area_size = 1.2
 place_randomly = false
 
@@ -1671,7 +1672,7 @@ frames = SubResource( 127 )
 position = Vector2( -2693, 2998 )
 scale = Vector2( 0.416667, 0.416667 )
 frames = SubResource( 136 )
-frame = 2
+frame = 1
 area_size = 1.5
 
 [node name="violent_violin" parent="paintings" instance=ExtResource( 29 )]

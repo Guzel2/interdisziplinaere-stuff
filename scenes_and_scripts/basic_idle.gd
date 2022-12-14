@@ -15,13 +15,6 @@ var repositioned = false
 func change_radius():
 	col.shape.set_radius(area_size * 500.0)
 
-#func _ready():
-	#var new_area = load("res://scenes_and_scripts/area.tscn").instance()
-	#area = new_area
-	#col = area.find_node('CollisionShape2D')
-	
-	#add_child(new_area)
-
 func _on_area_mouse_entered():
 	mouse_in_this = true
 	
@@ -29,7 +22,6 @@ func _on_area_mouse_entered():
 
 func _on_area_mouse_exited():
 	mouse_in_this = false
-
 
 func _on_area_area_entered(area):
 	var area_parent = area.get_parent()
