@@ -1,4 +1,4 @@
-[gd_scene load_steps=268 format=2]
+[gd_scene load_steps=270 format=2]
 
 [ext_resource path="res://scenes_and_scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/heads/Aang.png" type="Texture" id=2]
@@ -44,7 +44,7 @@
 [ext_resource path="res://sprites/paintings/Teller mit äpfeln.png" type="Texture" id=42]
 [ext_resource path="res://sprites/paintings/Venus Animation Spritesheet.png" type="Texture" id=43]
 [ext_resource path="res://scenes_and_scripts/main.gd" type="Script" id=44]
-[ext_resource path="res://sprites/drawing_ui/white_square.png" type="Texture" id=45]
+[ext_resource path="res://sprites/canvas_bg.png" type="Texture" id=45]
 [ext_resource path="res://sprites/heads/clock or dali.png" type="Texture" id=46]
 [ext_resource path="res://sprites/heads/bee fish.png" type="Texture" id=47]
 [ext_resource path="res://sprites/heads/it's me.png" type="Texture" id=48]
@@ -71,9 +71,13 @@
 [ext_resource path="res://sprites/heads/snow whie audrey.png" type="Texture" id=69]
 [ext_resource path="res://sprites/heads/The scream.png" type="Texture" id=70]
 [ext_resource path="res://sprites/paintings/4x2 9pic.sec Mord animation spritesheet.png" type="Texture" id=71]
+[ext_resource path="res://sprites/palette.png" type="Texture" id=72]
 
 [sub_resource type="RectangleShape2D" id=199]
 extents = Vector2( 960, 540 )
+
+[sub_resource type="RectangleShape2D" id=200]
+extents = Vector2( 125, 250 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -1295,6 +1299,7 @@ script = ExtResource( 44 )
 script = ExtResource( 1 )
 
 [node name="area" type="Area2D" parent="player"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/area"]
 shape = SubResource( 199 )
@@ -1316,9 +1321,19 @@ position = Vector2( 500, 0 )
 visible = false
 z_index = 1
 
+[node name="palette" type="Sprite" parent="player/canvas"]
+position = Vector2( -500, -250 )
+texture = ExtResource( 72 )
+centered = false
+
+[node name="palette_area" type="Area2D" parent="player/canvas/palette"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvas/palette/palette_area"]
+position = Vector2( 125, 250 )
+shape = SubResource( 200 )
+
 [node name="bg" type="Sprite" parent="player/canvas"]
-modulate = Color( 0.380392, 0.333333, 0.333333, 1 )
-scale = Vector2( 62, 62 )
+modulate = Color( 0.4, 0.4, 0.4, 1 )
 texture = ExtResource( 45 )
 
 [node name="container" type="ViewportContainer" parent="player/canvas"]
@@ -1326,9 +1341,6 @@ margin_left = -250.0
 margin_top = -250.0
 margin_right = 250.0
 margin_bottom = 250.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="viewport" type="Viewport" parent="player/canvas/container"]
 size = Vector2( 500, 500 )
@@ -1556,7 +1568,7 @@ frames = SubResource( 41 )
 place_randomly = false
 
 [node name="bishop" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -397, -1021 )
+position = Vector2( -1417, -1779 )
 frames = SubResource( 66 )
 
 [node name="brot" parent="paintings" instance=ExtResource( 3 )]
@@ -1564,8 +1576,9 @@ position = Vector2( -3766, 477 )
 frames = SubResource( 67 )
 
 [node name="dance_macabre" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( 596, -81 )
+position = Vector2( -1646, 518 )
 frames = SubResource( 80 )
+frame = 10
 place_randomly = false
 
 [node name="engel" parent="paintings" instance=ExtResource( 29 )]
@@ -1579,6 +1592,7 @@ frames = SubResource( 100 )
 [node name="medusa" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -571, -2896 )
 frames = SubResource( 104 )
+frame = 3
 
 [node name="girl_kissing" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -3404, -2417 )
@@ -1589,7 +1603,7 @@ position = Vector2( -2652, -909 )
 frames = SubResource( 123 )
 
 [node name="zitronenteller" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -1053, -541 )
+position = Vector2( -1955, -1032 )
 frames = SubResource( 124 )
 
 [node name="apfelteller" parent="paintings" instance=ExtResource( 3 )]
@@ -1607,10 +1621,10 @@ frames = SubResource( 127 )
 [node name="venus" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -2693, 2998 )
 frames = SubResource( 136 )
-frame = 2
+frame = 4
 
 [node name="violent_violin" parent="paintings" instance=ExtResource( 29 )]
-position = Vector2( -1690, 345 )
+position = Vector2( -2672, 484 )
 frames = SubResource( 158 )
 place_randomly = false
 
@@ -1620,3 +1634,5 @@ frames = SubResource( 198 )
 
 [connection signal="area_entered" from="player/area" to="player" method="_on_area_area_entered"]
 [connection signal="area_exited" from="player/area" to="player" method="_on_area_area_exited"]
+[connection signal="mouse_entered" from="player/canvas/palette/palette_area" to="player" method="_on_palette_area_mouse_entered"]
+[connection signal="mouse_exited" from="player/canvas/palette/palette_area" to="player" method="_on_palette_area_mouse_exited"]

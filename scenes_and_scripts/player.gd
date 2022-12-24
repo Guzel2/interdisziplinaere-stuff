@@ -6,6 +6,7 @@ onready var ui = $ui
 onready var canvas = $canvas
 onready var container = $canvas/container
 onready var viewport = $canvas/container/viewport
+onready var palette = $canvas/palette
 
 var speed = 3
 
@@ -22,15 +23,18 @@ var cooltimer = 1.0/60
 
 var img_number = 0
 
-var hue = 0.0
 var color = Color(1, 1, 1, 1)
 
 var picture_boarder = Vector2(256, 256)
+
+var palette_active = false
 
 func _ready():
 	for child in ui.get_children():
 		if 'sprite' in child.name:
 			sprites.append(child)
+	
+	set_drawing_mode()
 
 func _process(delta):
 	
@@ -52,10 +56,21 @@ func _process(delta):
 	else:
 		#pen
 		if Input.is_action_just_pressed("left_click"):
-			pen_down = true
+			if !palette_active:
+				pen_down = true
+			
 		if Input.is_action_just_released("left_click"):
-			pen_down = false
-			prev_pos = null
+			if palette_active:
+				var pos = (get_local_mouse_position() - palette.position)
+				var img = palette.get_texture().get_data()
+				img.lock()
+				color = img.get_pixel(pos.x, pos.y)
+				img.unlock()
+				
+				print(color)
+			else:
+				pen_down = false
+				prev_pos = null
 		
 		#drawing
 		if pen_down:
@@ -82,7 +97,7 @@ func _process(delta):
 						white_square.modulate = color
 						
 						white_area.rotation = white_square.rotation
-						white_area.position = white_square.position
+						white_area.position = white_square.position - Vector2(250, 250)
 						white_area.scale.x = distance/8
 						white_area.partner.append(white_square)
 						
@@ -109,7 +124,7 @@ func _process(delta):
 					
 					white_circle.position = mouse_pos
 					white_circle.modulate = color
-					white_circle_area.position = white_circle.position
+					white_circle_area.position = white_circle.position - Vector2(250, 250)
 					
 					white_circle_area.scale.x = 2
 					
@@ -136,7 +151,17 @@ func check_distances():
 				object.mouse_exited()
 
 func _on_area_area_entered(area):
-	area.get_parent().active = true
+	if area.name == "area":
+		area.get_parent().active = true
 
 func _on_area_area_exited(area):
-	area.get_parent().active = false
+	if area.name == "area":
+		area.get_parent().active = false
+
+
+func _on_palette_area_mouse_entered():
+	palette_active = true
+	pen_down = false
+
+func _on_palette_area_mouse_exited():
+	palette_active = false
