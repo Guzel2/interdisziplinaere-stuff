@@ -28,6 +28,9 @@ var color = Color(1, 1, 1, 1)
 var picture_boarder = Vector2(256, 256)
 
 var palette_active = false
+var canvas_active = false
+
+var all_lines_and_circles = []
 
 func _ready():
 	for child in ui.get_children():
@@ -56,21 +59,25 @@ func _process(delta):
 	else:
 		#pen
 		if Input.is_action_just_pressed("left_click"):
-			if !palette_active:
+			if canvas_active:
 				pen_down = true
 			
 		if Input.is_action_just_released("left_click"):
+			if canvas_active:
+				pen_down = false
+				prev_pos = null
+			
 			if palette_active:
 				var pos = (get_local_mouse_position() - palette.position)
 				var img = palette.get_texture().get_data()
 				img.lock()
 				color = img.get_pixel(pos.x, pos.y)
 				img.unlock()
-				
-				print(color)
-			else:
-				pen_down = false
-				prev_pos = null
+		
+		if Input.is_action_just_pressed("right_click"):
+			eraser = true
+		if Input.is_action_just_released("right_click"):
+			eraser = false
 		
 		#drawing
 		if pen_down:
@@ -86,49 +93,10 @@ func _process(delta):
 					if distance < 5: #makes sure there is a little distance between ends of a line
 						skipped = true
 					else:
-						var white_square = load("res://scenes_and_scripts/white_square.tscn").instance()
-						var white_area = load("res://scenes_and_scripts/white_area.tscn").instance()
-						viewport.add_child(white_square)
-						canvas.add_child(white_area)
-						
-						white_square.rotation = dir.angle()
-						white_square.position = mouse_pos-dir/2
-						white_square.scale.x = distance/8
-						white_square.modulate = color
-						
-						white_area.rotation = white_square.rotation
-						white_area.position = white_square.position - Vector2(250, 250)
-						white_area.scale.x = distance/8
-						white_area.partner.append(white_square)
-						
-						#adding start and end circle
-						var white_circle_1 = load("res://scenes_and_scripts/white_circle.tscn").instance()
-						var white_circle_2 = load("res://scenes_and_scripts/white_circle.tscn").instance()
-						viewport.add_child(white_circle_1)
-						viewport.add_child(white_circle_2)
-						
-						white_circle_1.position = prev_pos
-						white_circle_2.position = mouse_pos
-						
-						white_circle_1.modulate = color
-						white_circle_2.modulate = color
-						
-						white_area.partner.append(white_circle_1)
-						white_area.partner.append(white_circle_2)
+						draw_line_on_canvas(mouse_pos, dir, distance)
 				
 				if prev_pos == null or skipped: #draw circles
-					var white_circle = load("res://scenes_and_scripts/white_circle.tscn").instance()
-					var white_circle_area = load("res://scenes_and_scripts/white_area.tscn").instance()
-					viewport.add_child(white_circle)
-					canvas.add_child(white_circle_area)
-					
-					white_circle.position = mouse_pos
-					white_circle.modulate = color
-					white_circle_area.position = white_circle.position - Vector2(250, 250)
-					
-					white_circle_area.scale.x = 2
-					
-					white_circle_area.partner.append(white_circle)
+					draw_circle_on_canvas(mouse_pos)
 				
 				if skipped == false:
 					prev_pos = mouse_pos - canvas.position
@@ -140,6 +108,11 @@ func set_drawing_mode():
 	drawing_mode = true
 	canvas.visible = true
 
+func set_searching_mode():
+	drawing_mode = false
+	canvas.visible = false
+	
+
 func check_distances():
 	for object in parent.objects:
 		if object.active:
@@ -149,6 +122,57 @@ func check_distances():
 			
 			elif object.mouse_in_this:
 				object.mouse_exited()
+
+func draw_line_on_canvas(new_pos, dir, distance):
+	var white_square = load("res://scenes_and_scripts/white_square.tscn").instance()
+	var white_area = load("res://scenes_and_scripts/white_area.tscn").instance()
+	viewport.add_child(white_square)
+	canvas.add_child(white_area)
+	all_lines_and_circles.append(white_square)
+	all_lines_and_circles.append(white_area)
+	
+	white_square.rotation = dir.angle()
+	white_square.position = new_pos-dir/2
+	white_square.scale.x = distance/8
+	white_square.modulate = color
+	
+	white_area.rotation = white_square.rotation
+	white_area.position = white_square.position - Vector2(250, 250)
+	white_area.scale.x = distance/8
+	white_area.partner.append(white_square)
+	
+	#adding start and end circle
+	var white_circle_1 = load("res://scenes_and_scripts/white_circle.tscn").instance()
+	var white_circle_2 = load("res://scenes_and_scripts/white_circle.tscn").instance()
+	viewport.add_child(white_circle_1)
+	viewport.add_child(white_circle_2)
+	all_lines_and_circles.append(white_circle_1)
+	all_lines_and_circles.append(white_circle_2)
+	
+	white_circle_1.position = prev_pos
+	white_circle_2.position = new_pos
+	
+	white_circle_1.modulate = color
+	white_circle_2.modulate = color
+	
+	white_area.partner.append(white_circle_1)
+	white_area.partner.append(white_circle_2)
+
+func draw_circle_on_canvas(mouse_pos):
+	var white_circle = load("res://scenes_and_scripts/white_circle.tscn").instance()
+	var white_circle_area = load("res://scenes_and_scripts/white_area.tscn").instance()
+	viewport.add_child(white_circle)
+	canvas.add_child(white_circle_area)
+	all_lines_and_circles.append(white_circle)
+	all_lines_and_circles.append(white_circle_area)
+	
+	white_circle.position = mouse_pos
+	white_circle.modulate = color
+	white_circle_area.position = white_circle.position - Vector2(250, 250)
+	
+	white_circle_area.scale.x = 2
+	
+	white_circle_area.partner.append(white_circle)
 
 func _on_area_area_entered(area):
 	if area.name == "area":
@@ -161,7 +185,31 @@ func _on_area_area_exited(area):
 
 func _on_palette_area_mouse_entered():
 	palette_active = true
-	pen_down = false
 
 func _on_palette_area_mouse_exited():
 	palette_active = false
+
+
+func _on_canvas_area_mouse_entered():
+	canvas_active = true
+
+func _on_canvas_area_mouse_exited():
+	canvas_active = false
+	if pen_down:
+		var mouse_pos = get_local_mouse_position() - container.rect_position
+		var dir = mouse_pos - prev_pos
+		var distance = dir.length()
+		draw_line_on_canvas(mouse_pos, dir, distance)
+		
+		pen_down = false
+		prev_pos = null
+
+
+func _on_delete_all_button_up():
+	for object in all_lines_and_circles:
+		object.queue_free()
+	all_lines_and_circles.clear()
+
+
+func _on_save_button_up():
+	print('save me daddy')

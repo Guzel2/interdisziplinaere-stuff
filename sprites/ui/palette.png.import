@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/canvas_bg.png-431267125a881d5fb2d8b2b0112a468f.stex"
+path="res://.import/palette.png-3ed1b94f1904b3be55f019c35523116d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/canvas_bg.png"
-dest_files=[ "res://.import/canvas_bg.png-431267125a881d5fb2d8b2b0112a468f.stex" ]
+source_file="res://sprites/ui/palette.png"
+dest_files=[ "res://.import/palette.png-3ed1b94f1904b3be55f019c35523116d.stex" ]
 
 [params]
 
