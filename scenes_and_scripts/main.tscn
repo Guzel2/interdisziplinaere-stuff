@@ -1313,6 +1313,7 @@ shape = SubResource( 199 )
 current = true
 
 [node name="ui" type="Node2D" parent="player"]
+visible = false
 
 [node name="sprite1" type="Sprite" parent="player/ui"]
 position = Vector2( -500, 0 )
@@ -1323,6 +1324,7 @@ position = Vector2( -500, 0 )
 position = Vector2( 500, 0 )
 
 [node name="canvas" type="Node2D" parent="player"]
+visible = false
 z_index = 1
 
 [node name="palette" type="Sprite" parent="player/canvas"]
@@ -1359,7 +1361,7 @@ transparent_bg = true
 handle_input_locally = false
 hdr = false
 usage = 0
-render_target_update_mode = 3
+render_target_update_mode = 0
 
 [node name="save" type="TextureButton" parent="player/canvas"]
 margin_left = 292.0
@@ -1592,7 +1594,6 @@ __meta__ = {
 [node name="apfeltyp" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1701, -510 )
 frames = SubResource( 41 )
-place_randomly = false
 
 [node name="bishop" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1417, -1779 )
@@ -1603,10 +1604,9 @@ position = Vector2( -3766, 477 )
 frames = SubResource( 67 )
 
 [node name="dance_macabre" parent="paintings" instance=ExtResource( 3 )]
-position = Vector2( -1646, 518 )
+position = Vector2( -1770, 1069 )
 frames = SubResource( 80 )
 frame = 9
-place_randomly = false
 
 [node name="engel" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1781, -2584 )
@@ -1648,16 +1648,17 @@ frames = SubResource( 127 )
 [node name="venus" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -2693, 2998 )
 frames = SubResource( 136 )
-frame = 2
+frame = 5
 
 [node name="violent_violin" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -2672, 484 )
 frames = SubResource( 158 )
-place_randomly = false
 
 [node name="mord" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -4854, 1943 )
 frames = SubResource( 198 )
+
+[node name="drawings" type="Node2D" parent="."]
 
 [connection signal="area_entered" from="player/area" to="player" method="_on_area_area_entered"]
 [connection signal="area_exited" from="player/area" to="player" method="_on_area_area_exited"]

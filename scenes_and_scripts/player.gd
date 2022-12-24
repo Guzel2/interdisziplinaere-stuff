@@ -32,12 +32,12 @@ var canvas_active = false
 
 var all_lines_and_circles = []
 
+var drawing_num = 0
+
 func _ready():
 	for child in ui.get_children():
 		if 'sprite' in child.name:
 			sprites.append(child)
-	
-	set_drawing_mode()
 
 func _process(delta):
 	
@@ -174,6 +174,46 @@ func draw_circle_on_canvas(mouse_pos):
 	
 	white_circle_area.partner.append(white_circle)
 
+func save_drawing():
+	var img = viewport.get_texture().get_data()
+	img.flip_y()
+	var path = "sprites/drawings/drawing_" + String(drawing_num) + ".png"
+	img.save_png(path)
+	
+	drawing_num += 1
+	
+	clear_canvas()
+	
+	spawn_new_object(path, position)
+	
+	set_searching_mode()
+
+func clear_canvas():
+	for object in all_lines_and_circles:
+		object.queue_free()
+	all_lines_and_circles.clear()
+
+func spawn_new_object(path, pos):
+	var basic_idle = load("res://scenes_and_scripts/basic_idle.tscn").instance()
+	var sprite_frame = SpriteFrames.new()
+	
+	sprite_frame.add_frame('default', load_external_texture(path), 0)
+	
+	basic_idle.set_sprite_frames(sprite_frame)
+	
+	parent.drawings.add_child(basic_idle)
+	parent.objects.append(basic_idle)
+	parent.objects_to_find.append(basic_idle)
+
+func load_external_texture(path):
+	var image = Image.new()
+	image.load(path)
+	var texture = ImageTexture.new()
+	texture.create_from_image(image)
+	return texture
+
+
+
 func _on_area_area_entered(area):
 	if area.name == "area":
 		area.get_parent().active = true
@@ -206,10 +246,8 @@ func _on_canvas_area_mouse_exited():
 
 
 func _on_delete_all_button_up():
-	for object in all_lines_and_circles:
-		object.queue_free()
-	all_lines_and_circles.clear()
+	clear_canvas()
 
 
 func _on_save_button_up():
-	print('save me daddy')
+	save_drawing()

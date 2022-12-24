@@ -4,14 +4,21 @@ onready var player = $player
 onready var heads = $heads
 onready var paintings = $paintings
 
+onready var drawings = $drawings
+
 var objects = []
 var objects_to_place = []
 var objects_to_find = []
 var current_searched_objects = []
 var num_of_objects_to_search = 3
 
+var circle_num = 0
+var current_step = 0
+
+var positions_and_radius = []
+
 func _ready():
-	randomize()
+	#randomize()
 	set_up()
 	place_objects()
 	choose_objects_to_search()
@@ -36,32 +43,64 @@ func set_up():
 			objects_to_find.append(child)
 
 func place_objects():
-	var step_size = 360.0 / objects_to_place.size()
-	
 	objects_to_place.shuffle()
 	
-	var x = 0.0
+	while objects_to_place != []:
+		var radius = float(1500 + circle_num * 650)
+		var step_count = float(15 + circle_num * 10)
+		var step_size = 360/step_count
+		
+		current_step = 0
+		
+		while current_step < step_count:
+			if objects_to_place == []:
+				break
+			
+			var object = objects_to_place.pop_front()
+			
+			var pos = get_pos_on_circle(current_step, step_size, radius)
+			pos += Vector2(-250 + randi() % 501, -250 + randi() % 501)
+			object.position = pos
+			
+			var size = object.frames.get_frame(object.animation, object.frame).get_size()
+			var new_scale
+			
+			var obj_radius
+			
+			if size.x > size.y:
+				new_scale = 500.0/size.x
+				obj_radius = size.x/1.75
+			else:
+				new_scale = 500.0/size.y
+				obj_radius = size.y/1.75
+			object.radius = obj_radius
+			
+			new_scale *= .6 + float(randi() % 81)/100
+			object.scale = Vector2(new_scale, new_scale)
+			
+			object.rotation_degrees = -20 + randi() % 41
+			
+			
+			for position_to_check in positions_and_radius:
+				var distance = position_to_check[0].distance_to(pos)
+				
+				if distance < position_to_check[1] or distance < obj_radius * new_scale:
+					objects_to_place.append(object)
+					print('reposition')
+			
+			positions_and_radius.append([pos, obj_radius * new_scale])
+			
+			current_step += 1
+		
+		circle_num += 1
+
+func get_pos_on_circle(step: float, step_size: float, radius: float):
+	var pos = Vector2(0, 0)
 	
-	for object in objects_to_place:
-		object.position.x = cos((x / 90) * PI/2) * 4000
-		object.position.y = sin((x / 90) * PI/2) * 4000
-		
-		var size = object.frames.get_frame(object.animation, object.frame).get_size()
-		var new_scale
-		
-		if size.x > size.y:
-			new_scale = 500.0/size.x
-		else:
-			new_scale = 500.0/size.y
-		
-		new_scale *= .6 + float(randi() % 81)/100
-		object.scale = Vector2(new_scale, new_scale)
-		
-		object.rotation_degrees = -20 + randi() % 41
-		
-		#object.position += Vector2(-500 + randi() % 1001, -500 + randi() % 1001)
-		
-		x += step_size
+	pos.x = cos((step*step_size/90.0) * PI/2.0) * radius
+	pos.y = sin((step*step_size/90.0) * PI/2.0) * radius
+	
+	return pos
 
 func choose_objects_to_search():
 	objects_to_find.shuffle()
@@ -96,6 +135,9 @@ func check_if_player_found_object():
 			var object = objects_to_find.pop_front()
 			current_searched_objects.append(object)
 			objects_to_find.append(object)
+			
+			objects_to_place.append(object)
+			place_objects()
 			
 			player.set_drawing_mode()
 			
