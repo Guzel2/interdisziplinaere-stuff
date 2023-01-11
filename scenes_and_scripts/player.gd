@@ -34,12 +34,34 @@ var all_lines_and_circles = []
 
 var drawing_num = 0
 
+var lines_to_delete = []
+var deleted_lines = 0
+var delete_cap = 20
+
 func _ready():
 	for child in ui.get_children():
 		if 'sprite' in child.name:
 			sprites.append(child)
 
 func _process(delta):
+	deleted_lines = 0
+	var checking = false
+	
+	if lines_to_delete != []:
+		checking = true
+	
+	while checking:
+		if lines_to_delete != []:
+			checking = false
+		else:
+			var line = lines_to_delete.pop_front()
+			
+			line.queue_free()
+			deleted_lines += 1
+			
+			if deleted_lines >= delete_cap:
+				checking = false
+		
 	
 	#Input.warp_mouse_position(get_viewport().size/2)
 	#$Camera2D.position = get_global_mouse_position()
@@ -48,7 +70,17 @@ func _process(delta):
 			if get_local_mouse_position().length() > 20:
 				Input.warp_mouse_position(get_viewport().size/2 + get_local_mouse_position() - get_local_mouse_position()*.05)
 			var move_dir = (get_global_mouse_position()-position)
+			
 			position += move_dir * delta * speed
+			
+			var length = (position + move_dir * delta * speed).length()
+			var max_length = 800 + parent.circle_num * 650
+			
+			if length >= max_length:
+				position -= move_dir * delta * speed
+			
+			#1500 + circle_num * 650
+			
 		
 		
 		if Input.is_action_just_pressed("left_click"):
@@ -111,7 +143,6 @@ func set_drawing_mode():
 func set_searching_mode():
 	drawing_mode = false
 	canvas.visible = false
-	
 
 func check_distances():
 	for object in parent.objects:
@@ -190,7 +221,8 @@ func save_drawing():
 
 func clear_canvas():
 	for object in all_lines_and_circles:
-		object.queue_free()
+		lines_to_delete.append(object)
+	
 	all_lines_and_circles.clear()
 
 func spawn_new_object(path, pos):
@@ -211,7 +243,6 @@ func load_external_texture(path):
 	var texture = ImageTexture.new()
 	texture.create_from_image(image)
 	return texture
-
 
 
 func _on_area_area_entered(area):
