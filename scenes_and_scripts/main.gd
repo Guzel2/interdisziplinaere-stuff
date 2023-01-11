@@ -2,7 +2,11 @@ extends Node2D
 
 onready var player = $player
 onready var heads = $heads
+onready var space = $space
 onready var paintings = $paintings
+onready var jungle = $jungle
+
+onready var main_groups = [heads, space, paintings, jungle]
 
 onready var drawings = $drawings
 
@@ -18,7 +22,7 @@ var current_step = 0
 var positions_and_radius = []
 
 func _ready():
-	#randomize()
+	randomize()
 	set_up()
 	place_objects()
 	choose_objects_to_search()
@@ -26,21 +30,14 @@ func _ready():
 	update_ui()
 
 func set_up():
-	for child in heads.get_children():
-		objects.append(child)
-		
-		if child.place_randomly == true:
-			objects_to_place.append(child)
-		if child.can_be_found == true:
-			objects_to_find.append(child)
-	
-	for child in paintings.get_children():
-		objects.append(child)
-		
-		if child.place_randomly == true:
-			objects_to_place.append(child)
-		if child.can_be_found == true:
-			objects_to_find.append(child)
+	for group in main_groups:
+		for child in group.get_children():
+			objects.append(child)
+			
+			if child.place_randomly == true:
+				objects_to_place.append(child)
+			if child.can_be_found == true:
+				objects_to_find.append(child)
 
 func place_objects():
 	objects_to_place.shuffle()
@@ -93,6 +90,8 @@ func place_objects():
 			current_step += 1
 		
 		circle_num += 1
+	
+	print(circle_num)
 
 func get_pos_on_circle(step: float, step_size: float, radius: float):
 	var pos = Vector2(0, 0)
