@@ -10,5 +10,3 @@ func _on_white_area_mouse_entered():
 		queue_free()
 		for part in partner:
 			part.queue_free()
-		print('test')
-	

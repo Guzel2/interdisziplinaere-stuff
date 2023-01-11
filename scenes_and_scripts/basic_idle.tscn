@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes_and_scripts/basic_idle.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 750.0
+radius = 500.0
 
 [node name="basic_idle" type="AnimatedSprite"]
 playing = true

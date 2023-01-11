@@ -113,7 +113,7 @@ func update_ui():
 	for x in range(num_of_objects_to_search):
 		var texture = current_searched_objects[x].get_sprite_frames().get_frame('default', 0)
 		
-		var desired_sprite_size = 300.0
+		var desired_sprite_size = 200.0
 		var new_scale
 		
 		if texture.get_height() > texture.get_width():
@@ -129,14 +129,13 @@ func check_if_player_found_object():
 		if current_searched_objects[object_num].mouse_in_this == true:
 			print('yay you found an object')
 			
+			objects_to_place.append(current_searched_objects[object_num])
+			
 			current_searched_objects.remove(object_num)
 			
 			var object = objects_to_find.pop_front()
 			current_searched_objects.append(object)
 			objects_to_find.append(object)
-			
-			objects_to_place.append(object)
-			place_objects()
 			
 			player.set_drawing_mode()
 			

@@ -30,13 +30,5 @@ func mouse_entered():
 func mouse_exited():
 	mouse_in_this = false
 
-
-func _on_area_area_entered(area):
-	var area_parent = area.get_parent()
-	
-	if area_parent.repositioned == false:
-		#print(name, ' got entered by ', area.get_parent().name)
-		reposition()
-
 func reposition():
 	repositioned = true

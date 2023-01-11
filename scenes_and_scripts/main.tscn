@@ -3803,18 +3803,26 @@ shape = SubResource( 199 )
 current = true
 
 [node name="ui" type="Node2D" parent="player"]
+z_index = 10
+
+[node name="hud" type="Sprite" parent="player/ui"]
+modulate = Color( 0.25, 0.25, 0.25, 1 )
+position = Vector2( 5.5, 402 )
+scale = Vector2( 4.35, 0.752 )
+texture = ExtResource( 45 )
 
 [node name="sprite1" type="Sprite" parent="player/ui"]
-position = Vector2( -500, 0 )
+position = Vector2( -350, 340 )
 
 [node name="sprite2" type="Sprite" parent="player/ui"]
+position = Vector2( 0, 340 )
 
 [node name="sprite3" type="Sprite" parent="player/ui"]
-position = Vector2( 500, 0 )
+position = Vector2( 350, 340 )
 
 [node name="canvas" type="Node2D" parent="player"]
 visible = false
-z_index = 1
+z_index = 10
 
 [node name="palette" type="Sprite" parent="player/canvas"]
 position = Vector2( -500, -250 )
@@ -4513,7 +4521,7 @@ frames = SubResource( 67 )
 [node name="dance_macabre" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -1770, 1069 )
 frames = SubResource( 80 )
-frame = 9
+frame = 2
 
 [node name="engel" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1781, -2584 )
@@ -4526,7 +4534,7 @@ frames = SubResource( 100 )
 [node name="medusa" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -571, -2896 )
 frames = SubResource( 104 )
-frame = 1
+frame = 3
 
 [node name="girl_kissing" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -3404, -2417 )
@@ -4555,7 +4563,6 @@ frames = SubResource( 127 )
 [node name="venus" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -2693, 2998 )
 frames = SubResource( 136 )
-frame = 4
 
 [node name="violent_violin" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -2672, 484 )
@@ -4626,19 +4633,19 @@ frames = SubResource( 375 )
 position = Vector2( -2684, 2321 )
 frames = SubResource( 399 )
 animation = "active"
-frame = 5
+frame = 14
 
 [node name="medieval_honigs" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1594, 1674 )
 frames = SubResource( 425 )
 animation = "active"
-frame = 3
+frame = 13
 
 [node name="fuss_fresser" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1772, 1454 )
 frames = SubResource( 451 )
 animation = "active"
-frame = 2
+frame = 12
 
 [node name="owl" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1858, 1521 )

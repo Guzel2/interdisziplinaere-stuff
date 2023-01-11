@@ -38,31 +38,15 @@ var lines_to_delete = []
 var deleted_lines = 0
 var delete_cap = 20
 
+var check_distance_time = .5
+var check_distance_timer = check_distance_time
+
 func _ready():
 	for child in ui.get_children():
 		if 'sprite' in child.name:
 			sprites.append(child)
 
 func _process(delta):
-	deleted_lines = 0
-	var checking = false
-	
-	if lines_to_delete != []:
-		checking = true
-	
-	while checking:
-		if lines_to_delete != []:
-			checking = false
-		else:
-			var line = lines_to_delete.pop_front()
-			
-			line.queue_free()
-			deleted_lines += 1
-			
-			if deleted_lines >= delete_cap:
-				checking = false
-		
-	
 	#Input.warp_mouse_position(get_viewport().size/2)
 	#$Camera2D.position = get_global_mouse_position()
 	if !drawing_mode:
@@ -73,21 +57,23 @@ func _process(delta):
 			
 			position += move_dir * delta * speed
 			
-			var length = (position + move_dir * delta * speed).length()
-			var max_length = 800 + parent.circle_num * 650
-			
-			if length >= max_length:
-				position -= move_dir * delta * speed
-			
-			#1500 + circle_num * 650
-			
+		var length = position.length()
+		var max_length = 500 + parent.circle_num * 650
 		
+		if length >= max_length:
+			var back_dir = ((position - (position.normalized() * max_length))/max_length) * delta * speed * 5000
+			position -= back_dir
+		
+		#1500 + circle_num * 650
 		
 		if Input.is_action_just_pressed("left_click"):
 			parent.check_if_player_found_object()
 		
-		check_distances()
-		
+		if check_distance_timer > 0:
+			check_distance_timer -= delta
+		else:
+			check_distances()
+			check_distance_timer = check_distance_time
 	else:
 		#pen
 		if Input.is_action_just_pressed("left_click"):
@@ -135,6 +121,26 @@ func _process(delta):
 					cooldown = cooltimer
 			else:
 				cooldown -= delta
+		
+		
+		#clear delete queue
+		deleted_lines = 0
+		var checking = false
+		
+		if lines_to_delete != []:
+			checking = true
+		
+		while checking:
+			if lines_to_delete == []:
+				checking = false
+			else:
+				var line = lines_to_delete.pop_front()
+				
+				line.queue_free()
+				deleted_lines += 1
+				
+				if deleted_lines >= delete_cap:
+					checking = false
 	
 func set_drawing_mode():
 	drawing_mode = true
@@ -233,9 +239,12 @@ func spawn_new_object(path, pos):
 	
 	basic_idle.set_sprite_frames(sprite_frame)
 	
+	basic_idle.position = pos
+	
 	parent.drawings.add_child(basic_idle)
 	parent.objects.append(basic_idle)
 	parent.objects_to_find.append(basic_idle)
+	parent.place_objects()
 
 func load_external_texture(path):
 	var image = Image.new()
@@ -278,7 +287,6 @@ func _on_canvas_area_mouse_exited():
 
 func _on_delete_all_button_up():
 	clear_canvas()
-
 
 func _on_save_button_up():
 	save_drawing()
