@@ -19,7 +19,7 @@ var pen_down = false
 var prev_pos = null
 
 var cooldown = 0.0
-var cooltimer = 1.0/60
+var cooltimer = 1.0/30
 
 var img_number = 0
 
@@ -41,22 +41,38 @@ var delete_cap = 10
 var check_distance_time = .5
 var check_distance_timer = check_distance_time
 
+var window_size
+
+var default_screen_size = Vector2(1920, 1080)
+
 func _ready():
 	for child in ui.get_children():
 		if 'sprite' in child.name:
 			sprites.append(child)
+	
+	window_size = OS.get_window_size()
+	
+	print(window_size)
 
 func _process(delta):
 	#Input.warp_mouse_position(get_viewport().size/2)
 	#$Camera2D.position = get_global_mouse_position()
 	if !drawing_mode:
-		if position.distance_to(get_global_mouse_position()) > 20:
-			if get_local_mouse_position().length() > 20:
-				Input.warp_mouse_position(get_viewport().size/2 + get_local_mouse_position() - get_local_mouse_position()*.05)
+		var local_mouse_pos = get_local_mouse_position()
+		var mouse_length = local_mouse_pos.length()
+		
+		print(local_mouse_pos)
+		
+		if mouse_length > 20:
+			var multiplier = ((window_size/default_screen_size) * .95)
+			
+			print(multiplier)
+			
+			Input.warp_mouse_position(window_size/2 + local_mouse_pos * multiplier)
+			
 			var move_dir = (get_global_mouse_position()-position)
-			
 			position += move_dir * delta * speed
-			
+		
 		var length = position.length()
 		var max_length = 500 + parent.circle_num * 650
 		
@@ -212,7 +228,7 @@ func draw_circle_on_canvas(mouse_pos):
 func save_drawing():
 	var img = viewport.get_texture().get_data()
 	img.flip_y()
-	var path = "sprites/drawings/drawing_" + String(drawing_num) + ".png"
+	var path = "user://drawing_" + String(drawing_num) + ".png"
 	img.save_png(path)
 	
 	drawing_num += 1
