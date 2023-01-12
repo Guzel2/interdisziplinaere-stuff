@@ -4653,7 +4653,7 @@ frames = SubResource( 67 )
 [node name="dance_macabre" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -3032, 1481 )
 frames = SubResource( 80 )
-frame = 10
+frame = 2
 
 [node name="engel" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1781, -2584 )
@@ -4666,7 +4666,6 @@ frames = SubResource( 100 )
 [node name="medusa" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -571, -2896 )
 frames = SubResource( 104 )
-frame = 1
 
 [node name="girl_kissing" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -3404, -2417 )
@@ -4695,7 +4694,7 @@ frames = SubResource( 127 )
 [node name="venus" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( -2693, 2998 )
 frames = SubResource( 136 )
-frame = 3
+frame = 2
 
 [node name="violent_violin" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -2672, 484 )
@@ -4713,7 +4712,7 @@ frame = 2
 [node name="scream" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -3136, 2993 )
 frames = SubResource( 247 )
-frame = 1
+frame = 3
 
 [node name="finger" parent="paintings" instance=ExtResource( 3 )]
 position = Vector2( 1653, 1562 )
@@ -4722,7 +4721,6 @@ frames = SubResource( 250 )
 [node name="dog" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -3152, 1558 )
 frames = SubResource( 258 )
-frame = 3
 
 [node name="depresso" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -3711, 1493 )
@@ -4768,18 +4766,19 @@ frames = SubResource( 375 )
 position = Vector2( -2684, 2321 )
 frames = SubResource( 399 )
 animation = "active"
+frame = 20
 
 [node name="medieval_honigs" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1594, 1674 )
 frames = SubResource( 425 )
 animation = "active"
-frame = 6
+frame = 9
 
 [node name="fuss_fresser" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1772, 1454 )
 frames = SubResource( 451 )
 animation = "active"
-frame = 5
+frame = 8
 
 [node name="owl" parent="paintings" instance=ExtResource( 29 )]
 position = Vector2( -1858, 1521 )
