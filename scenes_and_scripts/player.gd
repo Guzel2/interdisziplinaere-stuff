@@ -123,32 +123,34 @@ func _process(delta):
 				cooldown -= delta
 		
 		
-		#clear delete queue
-		deleted_lines = 0
-		var checking = false
-		
-		if lines_to_delete != []:
-			checking = true
-		
-		while checking:
-			if lines_to_delete == []:
+	#clear delete queue
+	deleted_lines = 0
+	var checking = false
+	
+	if lines_to_delete != []:
+		checking = true
+	
+	while checking:
+		if lines_to_delete == []:
+			checking = false
+		else:
+			var line = lines_to_delete.pop_front()
+			
+			line.queue_free_this()
+			deleted_lines += 1
+			
+			if deleted_lines >= delete_cap:
 				checking = false
-			else:
-				var line = lines_to_delete.pop_front()
-				
-				line.queue_free()
-				deleted_lines += 1
-				
-				if deleted_lines >= delete_cap:
-					checking = false
 	
 func set_drawing_mode():
 	drawing_mode = true
 	canvas.visible = true
+	ui.visible = false
 
 func set_searching_mode():
 	drawing_mode = false
 	canvas.visible = false
+	ui.visible = true
 
 func check_distances():
 	for object in parent.objects:
@@ -165,7 +167,6 @@ func draw_line_on_canvas(new_pos, dir, distance):
 	var white_area = load("res://scenes_and_scripts/white_area.tscn").instance()
 	viewport.add_child(white_square)
 	canvas.add_child(white_area)
-	all_lines_and_circles.append(white_square)
 	all_lines_and_circles.append(white_area)
 	
 	white_square.rotation = dir.angle()
@@ -183,8 +184,6 @@ func draw_line_on_canvas(new_pos, dir, distance):
 	var white_circle_2 = load("res://scenes_and_scripts/white_circle.tscn").instance()
 	viewport.add_child(white_circle_1)
 	viewport.add_child(white_circle_2)
-	all_lines_and_circles.append(white_circle_1)
-	all_lines_and_circles.append(white_circle_2)
 	
 	white_circle_1.position = prev_pos
 	white_circle_2.position = new_pos
@@ -200,7 +199,6 @@ func draw_circle_on_canvas(mouse_pos):
 	var white_circle_area = load("res://scenes_and_scripts/white_area.tscn").instance()
 	viewport.add_child(white_circle)
 	canvas.add_child(white_circle_area)
-	all_lines_and_circles.append(white_circle)
 	all_lines_and_circles.append(white_circle_area)
 	
 	white_circle.position = mouse_pos
@@ -289,4 +287,5 @@ func _on_delete_all_button_up():
 	clear_canvas()
 
 func _on_save_button_up():
-	save_drawing()
+	if !all_lines_and_circles.empty():
+		save_drawing()
