@@ -36,7 +36,7 @@ var drawing_num = 0
 
 var lines_to_delete = []
 var deleted_lines = 0
-var delete_cap = 20
+var delete_cap = 10
 
 var check_distance_time = .5
 var check_distance_timer = check_distance_time
